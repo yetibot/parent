@@ -13,6 +13,8 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v2
+      - name: install-git
+        run: apt update && apt install -y git
       - name: test
         run: lein midje
       - name: release
